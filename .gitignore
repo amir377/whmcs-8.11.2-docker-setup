@@ -7,5 +7,5 @@ docker-compose.yaml
 docker/nginx/nginx.conf
 .htaccess
 configuration.php
-install-example/log/installer.log
-/install-example
+install/log/installer.log
+/install
