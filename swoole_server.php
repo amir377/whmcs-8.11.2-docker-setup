@@ -23,6 +23,7 @@ $http->on("request", function ($request, $response) {
 
     if ($request->server['request_method'] === 'POST') {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $request->rawContent());
+        curl_setopt($ch, CURLOPT_POST, true);
     }
 
     $responseFromApache = curl_exec($ch);
