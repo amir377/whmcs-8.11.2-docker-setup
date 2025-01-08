@@ -5,7 +5,9 @@
 .env
 docker-compose.yaml
 docker/nginx/nginx.conf
+docker/cron/crontab
 .htaccess
 configuration.php
 install/log/installer.log
 /install
+/templates_c
