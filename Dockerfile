@@ -55,12 +55,12 @@ COPY docker/apache/000-default.conf /etc/apache2/sites-available/000-default.con
 # Ensure proper ownership and permissions
 RUN chown -R www-data:www-data /var/www/html
 
-# Set directory permissions
-RUN find /var/www/html -type d -exec chmod 755 {} \;  # Directories: rwxr-xr-x
-RUN find /var/www/html -type f -exec chmod 644 {} \;  # Files: rw-r--r--
-
-# Ensure proper ownership and permissions
-RUN chown -R www-data:www-data /var/www/html
+## Set directory permissions
+#RUN find /var/www/html -type d -exec chmod 755 {} \;  # Directories: rwxr-xr-x
+#RUN find /var/www/html -type f -exec chmod 644 {} \;  # Files: rw-r--r--
+#
+## Ensure proper ownership and permissions
+#RUN chown -R www-data:www-data /var/www/html
 
 # Create a writable directory for automatic updates
 RUN mkdir -p /var/www/whmcs-update \
