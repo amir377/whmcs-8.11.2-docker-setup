@@ -149,4 +149,5 @@ RUN sed -i 's/^User .*/User www-data/' /etc/apache2/apache2.conf \
 EXPOSE 80 9090
 
 # Start Apache and cron service
-CMD cron && apache2ctl -D FOREGROUND & php /var/www/html/swoole_server.php
+#CMD cron && apache2ctl -D FOREGROUND & php /var/www/html/swoole_server.php
+CMD cron && apache2ctl -D FOREGROUND
