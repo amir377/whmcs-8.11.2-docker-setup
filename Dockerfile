@@ -53,14 +53,14 @@ COPY . /var/www/html/
 COPY docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 # Ensure proper ownership and permissions
-RUN chown -R root:root /var/www/html
+RUN chown -R www-data:www-data /var/www/html
 
 ## Set directory permissions
 #RUN find /var/www/html -type d -exec chmod 755 {} \;  # Directories: rwxr-xr-x
 #RUN find /var/www/html -type f -exec chmod 644 {} \;  # Files: rw-r--r--
 #
 ## Ensure proper ownership and permissions
-#RUN chown -R root:root /var/www/html
+#RUN chown -R www-data:www-data /var/www/html
 
 # Create a writable directory for automatic updates
 RUN mkdir -p /var/www/whmcs-update \
@@ -140,9 +140,9 @@ RUN crontab /etc/cron.d/whmcs-cron
 # Create log file for cron
 RUN touch /var/log/cron.log
 
-# Optional: Set Apache to run as root user and group
-RUN sed -i 's/^User .*/User root/' /etc/apache2/apache2.conf \
-    && sed -i 's/^Group .*/Group root/' /etc/apache2/apache2.conf
+# Optional: Set Apache to run as www-data user and group
+RUN sed -i 's/^User .*/User www-data/' /etc/apache2/apache2.conf \
+    && sed -i 's/^Group .*/Group www-data/' /etc/apache2/apache2.conf
 
 # Expose port 8888 for Apache
 # Expose port 9090 for Swoole

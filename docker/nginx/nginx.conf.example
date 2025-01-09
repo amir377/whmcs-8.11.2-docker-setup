@@ -51,11 +51,11 @@ http {
     # Define your upstream app servers (Docker containers)
     upstream app_servers {
         # Docker container names are used, Docker resolves them via internal DNS
-        server whmcs-8-11-2:80;
-#         server whmcs-8-11-2-whmcs-8-11-2-2:80;
-#         server whmcs-8-11-2-whmcs-8-11-2-3:80;
-#         server whmcs-8-11-2-whmcs-8-11-2-4:80;
-#         server whmcs-8-11-2-whmcs-8-11-2-5:80;
+        server whmcs-8-11-2:8888;
+#         server whmcs-8-11-2-whmcs-8-11-2-2:8888;
+#         server whmcs-8-11-2-whmcs-8-11-2-3:8888;
+#         server whmcs-8-11-2-whmcs-8-11-2-4:8888;
+#         server whmcs-8-11-2-whmcs-8-11-2-5:8888;
     }
 
     # Define your main server block for Nginx inside the container
