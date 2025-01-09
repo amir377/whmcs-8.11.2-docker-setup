@@ -6,7 +6,7 @@ $http = new Server("0.0.0.0", 9090);
 
 $http->on("request", function ($request, $response) {
     $apacheHost = "127.0.0.1";
-    $apachePort = 8888;
+    $apachePort = 80;
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "http://$apacheHost:$apachePort" . $request->server['request_uri']);
