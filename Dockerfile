@@ -144,9 +144,9 @@ RUN touch /var/log/cron.log
 RUN sed -i 's/^User .*/User www-data/' /etc/apache2/apache2.conf \
     && sed -i 's/^Group .*/Group www-data/' /etc/apache2/apache2.conf
 
-# Expose port 80 for Apache
+# Expose port 8888 for Apache
 # Expose port 9090 for Swoole
-EXPOSE 80 9090
+EXPOSE 8888 9090
 
 # Start Apache and cron service
 #CMD cron && apache2ctl -D FOREGROUND & php /var/www/html/swoole_server.php

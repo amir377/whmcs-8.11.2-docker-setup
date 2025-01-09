@@ -53,7 +53,7 @@ services:
     networks:
       - general
     expose:
-      - "80"
+      - "8888"
       - "9090"
 
   whmcs-8-11-2-nginx:
