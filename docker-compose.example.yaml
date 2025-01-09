@@ -54,7 +54,6 @@ services:
       - general
     expose:
       - "80"
-      - "9090"
 
   whmcs-8-11-2-nginx:
     image: nginx:latest
