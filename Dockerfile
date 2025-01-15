@@ -37,6 +37,9 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Install Composer globally
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 # Apply the timezone configuration to PHP
 RUN echo "date.timezone = ${TZ}" >> /usr/local/etc/php/conf.d/timezone.ini
 
