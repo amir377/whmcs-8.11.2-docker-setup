@@ -52,6 +52,9 @@ RUN echo "max_execution_time = 600" >> /usr/local/etc/php/conf.d/custom.ini \
 
 # Enable mod_rewrite for Apache
 RUN a2enmod rewrite
+RUN a2enmod proxy
+RUN a2enmod proxy_http
+
 
 # Copy application files into the container
 COPY . /var/www/html/
