@@ -43,6 +43,13 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Apply the timezone configuration to PHP
 RUN echo "date.timezone = ${TZ}" >> /usr/local/etc/php/conf.d/timezone.ini
 
+# PHP custom configurations
+RUN echo "max_execution_time = 600" >> /usr/local/etc/php/conf.d/custom.ini \
+    && echo "max_input_time = 600" >> /usr/local/etc/php/conf.d/custom.ini \
+    && echo "memory_limit = 512M" >> /usr/local/etc/php/conf.d/custom.ini \
+    && echo "post_max_size = 100M" >> /usr/local/etc/php/conf.d/custom.ini \
+    && echo "upload_max_filesize = 100M" >> /usr/local/etc/php/conf.d/custom.ini
+
 # Enable mod_rewrite for Apache
 RUN a2enmod rewrite
 
