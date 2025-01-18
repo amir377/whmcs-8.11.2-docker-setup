@@ -35,14 +35,6 @@ RUN apt-get update && apt-get install -y \
         soap \
         mbstring \
         openssl \
-        xml \
-        dom \
-        iconv \
-        intl \
-        json \
-        tokenizer \
-        xmlwriter \
-        zip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
